@@ -1,6 +1,6 @@
 import { parentPort } from 'worker_threads';
 
-const fibonacci = (n: number) => {
+export const fibonacci = (n: number) => {
   if (n < 2) {
     return n;
   }
