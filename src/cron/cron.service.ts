@@ -5,6 +5,6 @@ import { Interval } from '../scheduler/decorators/interval.decorator';
 export class CronService {
   @Interval(1000) // 👈
   everySecond() {
-    console.log('This will be logged every second 🐈 ');
+    // console.log('This will be logged every second 🐈 ');
   }
 }
