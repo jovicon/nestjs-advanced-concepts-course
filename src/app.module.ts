@@ -13,9 +13,12 @@ import { PaymentsModule } from './payments/payments.module';
 import { DataSourceModule } from './data-source/data-source.module';
 import { UsersModule } from './users/users.module';
 import { ContextIdFactory } from '@nestjs/core';
-import { AggregateByTenantContextIdStrategy } from './core/aggregate-by-tenant.strategy';
+// import { AggregateByTenantContextIdStrategy } from './core/aggregate-by-tenant.strategy';
+import { AggregateByLocaleContextIdStrategy } from './core/aggregate-by-locale.strategy';
 
-ContextIdFactory.apply(new AggregateByTenantContextIdStrategy());
+import { I18nModule } from './i18n/i18n.module';
+
+ContextIdFactory.apply(new AggregateByLocaleContextIdStrategy());
 
 @Module({
   imports: [
@@ -30,6 +33,7 @@ ContextIdFactory.apply(new AggregateByTenantContextIdStrategy());
     PaymentsModule,
     DataSourceModule,
     UsersModule,
+    I18nModule,
     // ⚠️  Alternatively:
     // HttpClientModule.registerAsync({
     //   useFactory: () => ({ baseUrl: 'http://nestjs.com' }),
